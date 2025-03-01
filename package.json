@@ -1,0 +1,33 @@
+{
+  "name": "stocks-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "tsup src",
+    "start": "node dist/server.js"  
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "prisma": "^6.4.1",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.0",
+    "@prisma/client": "^6.4.1",
+    "axios": "^1.8.1",
+    "cheerio": "^1.0.0",
+    "fastify": "^5.2.1",
+    "p-limit": "^6.2.0",
+    "zod": "^3.24.2"
+  }
+}
