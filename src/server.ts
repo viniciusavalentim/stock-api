@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import axios from "axios";
 import fastify, { FastifyReply, FastifyRequest } from "fastify";
-import pLimit from 'p-limit';
+
 
 const app = fastify({ logger: true });
 const prisma = new PrismaClient();
@@ -139,6 +139,7 @@ app.get("/info", async (req, res) => {
 });
 
 async function getTickes() {
+    const pLimit = (await import('p-limit')).default;
     const limit = pLimit(CONCURRENT_LIMIT);
 
     const promises = tags.map((tag) =>
